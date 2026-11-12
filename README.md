@@ -1,15 +1,14 @@
 # 奇门遁甲算法与古籍对照 · Qimen Core
 
-从 [知几排盘](https://github.com/weihaoyang/qimen-llm-chart) 提取的 TypeScript 奇门计算代码，包括排盘、格局和测试。依赖 3meta 与 lunar-typescript。运行源码前须执行 `npm run patch:3meta`，为固定版本的 3meta 应用中宫和值使等修正；补丁修改本地依赖副本。
+从 [知几排盘](https://github.com/weihaoyang/qimen-llm-chart) 提取的 TypeScript 奇门计算代码，包括排盘、格局和测试。依赖 3meta 与 lunar-typescript。使用 [3meta 修正版](https://github.com/weihaoyang/3meta-patched) 的固定提交，无需修改依赖安装目录。
 
 ```sh
 npm install
-npm run patch:3meta
 npm test
 npm run typecheck
 ```
 
-源码入口为 `src/lib/qimen/chart.ts`；尚未发布 npm 包。
+源码入口为 `src/lib/qimen/chart.ts`；发布后可使用 `npm install @singseq/qimen-core`。
 
 ## 古籍与案例
 

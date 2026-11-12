@@ -6,17 +6,129 @@
   "scripts": {
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "patch:3meta": "node ops/patch-3meta.mjs",
-    "pretest": "npm run patch:3meta"
+    "build": "tsup src/lib/qimen/index.ts src/lib/qimen/chart.ts src/lib/qimen/settings.ts src/lib/qimen/patterns.ts src/lib/qimen/timezone.ts src/lib/qimen/sequence.ts src/lib/qimen/serializer.ts src/lib/qimen/kline.ts src/lib/qimen/defaults.ts --format esm,cjs --dts --clean",
+    "prepack": "npm run build"
   },
   "dependencies": {
-    "3meta": "2.6.0",
+    "3meta": "https://codeload.github.com/weihaoyang/3meta-patched/tar.gz/97f726c",
     "lunar-typescript": "1.8.6",
     "react": "19.2.4"
   },
   "devDependencies": {
     "@types/react": "^19",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "tsup": "8.5.1"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "LICENSES",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weihaoyang/qimen-core.git"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./chart": {
+      "import": {
+        "types": "./dist/chart.d.ts",
+        "default": "./dist/chart.js"
+      },
+      "require": {
+        "types": "./dist/chart.d.cts",
+        "default": "./dist/chart.cjs"
+      }
+    },
+    "./settings": {
+      "import": {
+        "types": "./dist/settings.d.ts",
+        "default": "./dist/settings.js"
+      },
+      "require": {
+        "types": "./dist/settings.d.cts",
+        "default": "./dist/settings.cjs"
+      }
+    },
+    "./patterns": {
+      "import": {
+        "types": "./dist/patterns.d.ts",
+        "default": "./dist/patterns.js"
+      },
+      "require": {
+        "types": "./dist/patterns.d.cts",
+        "default": "./dist/patterns.cjs"
+      }
+    },
+    "./timezone": {
+      "import": {
+        "types": "./dist/timezone.d.ts",
+        "default": "./dist/timezone.js"
+      },
+      "require": {
+        "types": "./dist/timezone.d.cts",
+        "default": "./dist/timezone.cjs"
+      }
+    },
+    "./sequence": {
+      "import": {
+        "types": "./dist/sequence.d.ts",
+        "default": "./dist/sequence.js"
+      },
+      "require": {
+        "types": "./dist/sequence.d.cts",
+        "default": "./dist/sequence.cjs"
+      }
+    },
+    "./serializer": {
+      "import": {
+        "types": "./dist/serializer.d.ts",
+        "default": "./dist/serializer.js"
+      },
+      "require": {
+        "types": "./dist/serializer.d.cts",
+        "default": "./dist/serializer.cjs"
+      }
+    },
+    "./kline": {
+      "import": {
+        "types": "./dist/kline.d.ts",
+        "default": "./dist/kline.js"
+      },
+      "require": {
+        "types": "./dist/kline.d.cts",
+        "default": "./dist/kline.cjs"
+      }
+    },
+    "./defaults": {
+      "import": {
+        "types": "./dist/defaults.d.ts",
+        "default": "./dist/defaults.js"
+      },
+      "require": {
+        "types": "./dist/defaults.d.cts",
+        "default": "./dist/defaults.cjs"
+      }
+    }
   }
 }
