@@ -10,7 +10,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "3meta": "https://codeload.github.com/weihaoyang/3meta-patched/tar.gz/97f726c",
+    "3meta": "https://codeload.github.com/weihaoyang/3meta-patched/tar.gz/97f726c6aba2dbbb4bc9e8c06471f0a2919a89ce",
     "lunar-typescript": "1.8.6",
     "react": "19.2.4"
   },
